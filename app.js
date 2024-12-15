@@ -43,13 +43,13 @@ app.use("/api/v1/getAppointments", getAppointments);
 app.use("/api/v1/getConsultations", getConsultations);
 app.put("/api/v1/user/reset-password/:token", resetPassword);
 
-// Serve static files from the frontend directory
-app.use(express.static(path.join(__dirname, "../frontend/dist")));
+// // Serve static files from the frontend directory
+// app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
-// Serve the React app for reset-password route
-app.get("/reset-password/:token", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/dist", "index.html"));
-});
+// // Serve the React app for reset-password route
+// app.get("/reset-password/:token", (req, res) => {
+//   res.sendFile(path.join(__dirname, "../frontend/dist", "index.html"));
+// });
 
 // Fallback route to serve React app
 app.get("*", (req, res) => {
