@@ -17,8 +17,8 @@ import userRouter from "./router/userRouter.js";
 config({ path: "./config/config.env" });
 
 // Create __dirname equivalent
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
 
 const app = express();
 
@@ -52,9 +52,9 @@ app.put("/api/v1/user/reset-password/:token", resetPassword);
 // });
 
 // Fallback route to serve React app
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/dist", "index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "../frontend/dist", "index.html"));
+// });
 
 // Error handling middleware
 app.use(errorMiddleware);
